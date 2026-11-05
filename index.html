@@ -1,138 +1,221 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的網頁</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <title>行動網頁期中考</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
+        body {
+            margin: 0;
+            color: #242424;
+            font-family: Arial, "Microsoft JhengHei", sans-serif;
+        }
 
-    main {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
+        main {
+            width: min(100% - 36px, 1280px);
+            margin: 0 auto;
+        }
 
-    .carousel-inner {
-      overflow: hidden;
-    }
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
 
-    .carousel-item {
-      display: none;
-    }
+        h1 {
+            margin: 16px 0 14px;
+            font-size: 28px;
+            font-weight: 400;
+        }
 
-    .carousel-item.active {
-      display: block;
-    }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+        }
 
-    .carousel-item img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 1280 / 500;
-      object-fit: cover;
-    }
+        .carousel-item {
+            display: none;
+            position: relative;
+        }
 
-    .cards {
-      display: flex;
-      gap: 16px;
-      margin: 24px 0;
-    }
+        .carousel-item.active {
+            display: block;
+        }
 
-    .card {
-      flex: 1 1 0;
-      min-width: 0;
-      border: 1px solid #ddd;
-    }
+        .carousel-item img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1280 / 500;
+            object-fit: cover;
+        }
 
-    .card img {
-      display: block;
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
+        .carousel-caption {
+            position: absolute;
+            right: 0;
+            bottom: 24px;
+            left: 0;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 1px 4px #333;
+        }
 
-    .card-body {
-      padding: 16px;
-    }
+        .carousel-caption p {
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
 
-    footer {
-      border-top: 1px solid #333;
-      padding: 16px 0;
-      text-align: center;
-    }
-  </style>
+        .carousel-caption h2 {
+            margin-bottom: 0;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .cards-title {
+            margin: 42px 0 14px;
+            font-size: 22px;
+            font-weight: 400;
+        }
+
+        .cards {
+            display: flex;
+            gap: 16px;
+        }
+
+        .card {
+            flex: 1 1 0;
+            min-width: 0;
+            overflow: hidden;
+            border: 1px solid #d7d7d7;
+            border-radius: 3px;
+        }
+
+        .card img {
+            display: block;
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 9px;
+        }
+
+        .card-title {
+            margin-bottom: 6px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .card-text {
+            min-height: 34px;
+            margin-bottom: 0;
+            font-size: 12px;
+            line-height: 1.45;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 14px 0 24px;
+            border-top: 1px solid #e5e5e5;
+            color: #444;
+            font-size: 16px;
+        }
+
+        @media (max-width: 700px) {
+            .cards {
+                flex-wrap: wrap;
+            }
+
+            .card {
+                flex-basis: calc(50% - 8px);
+            }
+        }
+    </style>
 </head>
 <body>
-<main>
-    <div id="carouselStacked" class="carousel slide">
-  <div class="d-flex justify-content-between align-items-center">
-    <h5 class="mb-0">Top controls</h5>
-    <div>
-      <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselStacked" data-bs-slide="prev">
-        <span class="carousel-icon-prev" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="btn-icon btn-sm" type="button" data-bs-target="#carouselStacked" data-bs-slide="next">
-        <span class="carousel-icon-next" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-  <div class="carousel-inner rounded-5">
-    <div class="carousel-item active">
-      <img src="https://picsum.photos/seed/slide-1/1280/500" class="d-block w-100" alt="輪播圖一">
-    </div>
-    <div class="carousel-item">
-      <img src="https://picsum.photos/seed/slide-2/1280/500" class="d-block w-100" alt="輪播圖二">
-    </div>
-    <div class="carousel-item">
-      <img src="https://picsum.photos/seed/slide-3/1280/500" class="d-block w-100" alt="輪播圖三">
-    </div>
-    <div class="carousel-item">
-      <img src="https://picsum.photos/seed/slide-4/1280/500" class="d-block w-100" alt="輪播圖四">
-    </div>
-  </div>
+    <main>
+        <h1>行動網頁期中考</h1>
 
-  <div class="cards">
-  <section class="card">
-  <img src="https://picsum.photos/id/870/200/300?grayscale&blur=2" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="#" class="btn-solid theme-primary">Go somewhere</a>
-  </div>
-  </section>
-  <section class="card">
-  <img src="https://picsum.photos/id/870/200/300?grayscale&blur=2" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="#" class="btn-solid theme-primary">Go somewhere</a>
-  </div>
-<section class="card">
-  <img src="https://picsum.photos/id/870/200/300?grayscale&blur=2" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="#" class="btn-solid theme-primary">Go somewhere</a>
-  </div>
-<section class="card">
-  <img src="https://picsum.photos/id/870/200/300?grayscale&blur=2" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h4 class="card-title">Card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="#" class="btn-solid theme-primary">Go somewhere</a>
-  </div>
-</section>
-</div>
-</div>
-</main>
-<footer>班級：＿＿＿＿　學號：＿＿＿＿　姓名：＿＿＿＿</footer>
+        <section class="carousel" aria-label="旅遊圖片輪播">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1280&h=500&q=80" width="1280" height="500" alt="夜晚城市街景">
+                <div class="carousel-caption">
+                    <p>01 / City after dark</p>
+                    <h2>Let the city set the rhythm.</h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1280&h=500&q=80" width="1280" height="500" alt="咖啡館室內">
+                <div class="carousel-caption">
+                    <p>02 / Slow mornings</p>
+                    <h2>Start somewhere warm.</h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1280&h=500&q=80" width="1280" height="500" alt="現代建築">
+                <div class="carousel-caption">
+                    <p>03 / Designed to live</p>
+                    <h2>Notice the details.</h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1280&h=500&q=80" width="1280" height="500" alt="城市夜景">
+                <div class="carousel-caption">
+                    <p>04 / Neon stories</p>
+                    <h2>Stay out a little longer.</h2>
+                </div>
+            </div>
+        </section>
+
+        <h2 class="cards-title">Small moments in the city</h2>
+        <section class="cards">
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=400&h=260&q=80" alt="夜晚城市街景">
+                <div class="card-body">
+                    <h3 class="card-title">City lights</h3>
+                    <p class="card-text">Watch the streets glow when the sun goes down.</p>
+                </div>
+            </article>
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&h=260&q=80" alt="咖啡館室內">
+                <div class="card-body">
+                    <h3 class="card-title">Coffee break</h3>
+                    <p class="card-text">A warm cup and a quiet table make a good day.</p>
+                </div>
+            </article>
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=400&h=260&q=80" alt="現代建築">
+                <div class="card-body">
+                    <h3 class="card-title">New angles</h3>
+                    <p class="card-text">Look closer and find beauty in the built world.</p>
+                </div>
+            </article>
+            <article class="card">
+                <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=400&h=260&q=80" alt="城市夜景">
+                <div class="card-body">
+                    <h3 class="card-title">After hours</h3>
+                    <p class="card-text">There is always another story after the lights come on.</p>
+                </div>
+            </article>
+        </section>
+
+        <footer>UCA4A 1112213019 CHANG HAN LIN</footer>
+    </main>
+
+    <script>
+        const slides = document.querySelectorAll('.carousel-item');
+        let currentSlide = 0;
+
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4000);
+    </script>
 </body>
 </html>
